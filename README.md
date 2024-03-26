@@ -17,4 +17,14 @@ Helm Chart samples required in combination with the [gitops-ftw Github repositor
 
 - Requires a k8s cluster
 
+### Showcase GitOps
+
+0. Create a `feature/xyz` branch
+1. Update the `values.yml` file, e.g. 
+
+```sh
 TBD
+```
+
+2. Create a PR in order to merge from `feature/xyz` branch into the `main` branch
+3. Observe if the changes of the Helm charts synchronize with the Kubernetes cluster. Utilize for ArgoCD the Web UI
