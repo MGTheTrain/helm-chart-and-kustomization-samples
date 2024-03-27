@@ -5,17 +5,25 @@
 ## Table of Contents
 
 + [Summary](#summary)
++ [Features](#features)
 + [Getting started](#getting-started)
 
 ## Summary
 
 Helm Chart samples required in combination with the [gitops-ftw Github repository](https://github.com/MGTheTrain/gitops-ftw) to showcase GitOps. ArgoCD applications or Flux HelmReleases will refer to these custom helm chart samples. GitOps will be demonstrated in that the defined state of the Helm charts synchronizes with the Kubernetes cluster via the **Sync Controller** after `feature` branches get merged into the `main` branch 
 
+## Features
+
+- [ ] Implement sample Python FastAPI HelloWorld service 
+- [ ] Implement CI/CD workflow for building and pushing the dockerized sample service to an ACR and pulling it into a k8s cluster in order to run a container process 
+- [ ] Implement helm chart for the sample service required for GitOps
+
 ## Getting started
 
 ### Preconditions
 
 - Requires a k8s cluster
+- Requires a Docker Container registry (.g. ACR) 
 
 ### Showcase GitOps
 
