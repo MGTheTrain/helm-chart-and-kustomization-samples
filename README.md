@@ -23,7 +23,7 @@ Helm Chart samples required in combination with the [gitops-ftw Github repositor
 ### Preconditions
 
 - Requires a k8s cluster
-- Requires a Docker Container registry (.g. ACR) 
+- Requires a Docker Container registry (e.g. ACR) 
 
 ### Showcase GitOps
 
