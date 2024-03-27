@@ -14,9 +14,9 @@ Helm Chart samples required in combination with the [gitops-ftw Github repositor
 
 ## Features
 
-- [ ] Implement sample Python FastAPI HelloWorld service 
-- [ ] Implement CI/CD workflow for building and pushing the dockerized sample service to an ACR and pulling it into a k8s cluster in order to run a container process 
-- [ ] Implement helm chart for the sample service required for GitOps
+- [ ] Sample Python FastAPI HelloWorld service 
+- [ ] CI/CD workflow for building and pushing the dockerized sample service to an ACR and pulling it into a k8s cluster in order to run a container process 
+- [ ] Helm chart for the sample service required for GitOps
 
 ## Getting started
 
