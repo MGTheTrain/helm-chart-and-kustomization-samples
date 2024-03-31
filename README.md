@@ -1,7 +1,5 @@
 # helm-chart-samples-ftw
 
-![Status](https://img.shields.io/badge/Status-On%20Hold-orange)
-
 ## Table of Contents
 
 + [Summary](#summary)
@@ -14,7 +12,7 @@ Helm Chart samples required in combination with the [gitops-ftw Github repositor
 
 ## Features
 
-- [ ] Sample C# ASP .NET Core HelloWorld service 
+- [x] Sample C# ASP .NET Core HelloWorld service 
 - [ ] CI workflow for building and pushing the dockerized sample service to an ACR
 - [ ] Helm chart for the sample service required for GitOps
 
@@ -24,6 +22,7 @@ Helm Chart samples required in combination with the [gitops-ftw Github repositor
 
 - Requires a k8s cluster
 - Requires a Docker Container registry (e.g. ACR) 
+- Add the git submodule with `git submodule update --init`
 
 ### Showcase GitOps
 
