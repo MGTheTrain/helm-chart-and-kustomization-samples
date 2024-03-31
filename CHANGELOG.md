@@ -12,3 +12,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Feature] Sample C# ASP .NET Core HelloWorld service 
+- [Feature] CD wofklow for on demand deployments of an ACR (**Required for building and pushing internal service docker images**)
+- [Feature] CI workflow for building and pushing the dockerized sample service to an ACR
