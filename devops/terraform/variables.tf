@@ -60,5 +60,5 @@ variable "acr_sku" {
 variable "acr_admin_enabled" {
   description = "Flag to enable admin user for the Azure Container Registry"
   type        = bool
-  default     = false
+  default     = true
 }
