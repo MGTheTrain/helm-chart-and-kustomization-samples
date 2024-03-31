@@ -1,0 +1,37 @@
+name: Build and push docker image
+
+on:
+  workflow_dispatch:
+    inputs:
+      DOCKER_IMAGE_TAG:
+        required: true
+        default: "0.1.0"
+        description: "The docker image tag"
+
+jobs:
+  build-and-push-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Update git sumodules
+        run: |
+          git submodule update --init
+          ls -al sample-service
+      - name: Set up QEMU 
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx 🐳
+        uses: docker/setup-buildx-action@v3
+      - uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.ACR_LOGIN_SERVER }}
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+      - name: Build docker image 🐳/📦
+        shell: bash
+        run: |
+          docker build -t ${{ secrets.ACR_LOGIN_SERVER }}/sample-service:${{ github.event.inputs.DOCKER_IMAGE_TAG }} .
+        working-directory: ./sample-service/src/HelloWorldService
+      - name: Push docker image 🐳/📦
+        shell: bash
+        run: docker push ${{ inputs.ACR_LOGIN_SERVER }}/sample-service:${{ github.event.inputs.DOCKER_IMAGE_TAG }}
