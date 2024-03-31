@@ -13,6 +13,7 @@ Helm Chart samples required in combination with the [gitops-ftw Github repositor
 ## Features
 
 - [x] Sample C# ASP .NET Core HelloWorld service 
+- [ ] CD wofklow for on demand deployments of an ACR (**Required for building and pushing internal service docker images**)
 - [ ] CI workflow for building and pushing the dockerized sample service to an ACR
 - [ ] Helm chart for the sample service required for GitOps
 
