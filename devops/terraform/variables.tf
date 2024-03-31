@@ -50,3 +50,15 @@ variable "number_of_container_registries" {
   description = "The total number of Azure Container registries to deploy."
   type        = number
 }
+
+variable "acr_sku" {
+  description = "SKU for the Azure Container Registry"
+  type        = string
+  default     = "Basic"
+}
+
+variable "acr_admin_enabled" {
+  description = "Flag to enable admin user for the Azure Container Registry"
+  type        = bool
+  default     = false
+}
