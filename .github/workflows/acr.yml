@@ -1,0 +1,28 @@
+name: Deploy an ACR
+
+on:
+  workflow_dispatch:
+
+env:
+  ARM_SUBSCRIPTION_ID: '${{ secrets.ARM_SUBSCRIPTION_ID }}'
+  ARM_TENANT_ID: '${{ secrets.ARM_TENANT_ID }}'
+  ARM_CLIENT_ID: '${{ secrets.ARM_CLIENT_ID }}'
+  ARM_CLIENT_SECRET: '${{ secrets.ARM_CLIENT_SECRET }}'
+
+jobs:
+  deploy-acr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3  
+      - name: Terraform Init
+        id: init
+        run: terraform init # should be only deployed once. Ensure to manually destroy the ACR in the Azure Portal Web UI
+        working-directory: ./devops/terraform
+      - name: Terraform Apply
+        id: apply
+        run: terraform apply --auto-approve
+        continue-on-error: false
+        working-directory: ./devops/terraform
