@@ -15,9 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
       - name: Update git sumodules
-        run: |
-          git submodule update --init
-          ls -al sample-service
+        run: git submodule update --init
       - name: Set up QEMU 
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx 🐳
@@ -34,4 +32,4 @@ jobs:
         working-directory: ./sample-service/src/HelloWorldService
       - name: Push docker image 🐳/📦
         shell: bash
-        run: docker push ${{ inputs.ACR_LOGIN_SERVER }}/sample-service:${{ github.event.inputs.DOCKER_IMAGE_TAG }}
+        run: docker push ${{ secrets.ACR_LOGIN_SERVER }}/sample-service:${{ github.event.inputs.DOCKER_IMAGE_TAG }}
