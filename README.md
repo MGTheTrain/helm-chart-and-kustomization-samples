@@ -24,6 +24,7 @@ Helm Chart samples required in combination with the [gitops-ftw Github repositor
 
 - Requires a k8s cluster
 - Requires a Docker Container registry (e.g. ACR) 
+- Add the git submodule with `git submodule update --init`
 
 ### Showcase GitOps
 
