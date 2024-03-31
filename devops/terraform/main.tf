@@ -11,4 +11,5 @@ resource "azurerm_container_registry" "this" {
   location            = azurerm_resource_group.this.location
   sku                 = var.acr_sku
   admin_enabled       = var.acr_admin_enabled
+  count               = var.number_of_container_registries
 }
