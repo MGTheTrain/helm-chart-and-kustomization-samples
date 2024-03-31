@@ -2,7 +2,7 @@ name: Deploy an ACR
 
 on:
   workflow_dispatch:
-  push:
+  pull_request:
 
 env:
   ARM_SUBSCRIPTION_ID: '${{ secrets.ARM_SUBSCRIPTION_ID }}'
