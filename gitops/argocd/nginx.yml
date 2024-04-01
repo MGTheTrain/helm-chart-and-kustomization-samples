@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/MGTheTrain/helm-chart-samples-ftw.git
-    path: ./helm/nginx
+    path: ./gitops/helm/nginx
     targetRevision: main
     directory:
       recurse: true

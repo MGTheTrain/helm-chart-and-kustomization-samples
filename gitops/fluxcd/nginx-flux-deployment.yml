@@ -23,7 +23,7 @@ spec:
             - name: GIT_URL
               value: "https://github.com/MGTheTrain/helm-chart-samples-ftw.git"
             - name: GIT_PATH
-              value: "helm/nginx"
+              value: "gitops/helm/nginx"
             - name: GIT_POLL_INTERVAL
               value: "1m"
             - name: GIT_LABEL
