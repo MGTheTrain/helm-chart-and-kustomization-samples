@@ -37,4 +37,4 @@ tag: "0.2.0" # Ensure docker image with tag 0.2.0 exists in the ACR
 ```
 
 2. Create a PR in order to merge from `feature/xyz` branch into the `main` branch
-3. Observe if the changes of the Helm charts synchronize with the Kubernetes cluster. Utilize for ArgoCD the Web UI
+3. Observe if the changes of the Helm charts synchronize with the Kubernetes cluster. Utilize for ArgoCD the Web UI. You might consider [port forwarding](https://github.com/MGTheTrain/gitops-ftw?tab=readme-ov-file#port-forwarding) with granted access to the k8s resources  
