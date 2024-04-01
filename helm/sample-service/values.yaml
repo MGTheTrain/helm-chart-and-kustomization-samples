@@ -5,12 +5,16 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: gftfbesbxacr001.azurecr.io/sample-service
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "0.1.0"
 
-imagePullSecrets: []
+imagePullSecrets:
+  - name: "acr-secret"
+envFrom:
+  secretRefName: "service-secret"
+
 nameOverride: ""
 fullnameOverride: ""
 
