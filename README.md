@@ -17,23 +17,23 @@ Helm Chart samples required in combination with the [gitops-ftw Github repositor
 - [x] Sample C# ASP .NET Core HelloWorld service 
 - [x] CD wofklow for on demand deployments of an ACR (**Required for building and pushing internal service docker images**)
 - [x] CI workflow for building and pushing the dockerized sample service to an ACR
-- [ ] Helm chart for the sample service required for GitOps
+- [x] Helm chart for the sample service required for GitOps
 
 ## Getting started
 
 ### Preconditions
 
-- Requires a k8s cluster
+- Requires a k8s cluster with installed GitOps tool (e.g. ArgoCD or FluxCD)
 - Requires a Docker Container registry (e.g. ACR) 
-- Add the git submodule with `git submodule update --init`
 
 ### Showcase GitOps
 
 0. Create a `feature/xyz` branch
-1. Update the `values.yml` file, e.g. 
+1. Modify the Docker image tag to reference alternative service release versions in the [values.yml](./helm/sample-service/values.yaml) file, e.g. 
 
 ```sh
-TBD
+# tag: "0.1.0" # Ensure docker image with tag 0.1.0 exists in the ACR 
+tag: "0.2.0" # Ensure docker image with tag 0.2.0 exists in the ACR
 ```
 
 2. Create a PR in order to merge from `feature/xyz` branch into the `main` branch
