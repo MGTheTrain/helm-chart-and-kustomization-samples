@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flux
+  namespace: flux-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flux
+  template:
+    metadata:
+      labels:
+        app: flux
+    spec:
+      containers:
+        - name: flux
+          image: fluxcd/flux:v2.0.0
+          args:
+            - --memcached-hostname=flux-memcached
+            - --ssh-keygen-dir=/var/fluxd/keygen
+          env:
+            - name: GIT_URL
+              value: "https://github.com/MGTheTrain/helm-chart-samples-ftw.git"
+            - name: GIT_PATH
+              value: "helm/sample-service"
+            - name: GIT_POLL_INTERVAL
+              value: "1m"
+            - name: GIT_LABEL
+              value: "main"
+            - name: MEMCACHED_HOSTNAME
+              value: "flux-memcached"
+            - name: MEMCACHED_SERVICE
+              value: "flux-memcached"
+            - name: SYNC_GIT_TAG
+              value: "auto"
+          volumeMounts:
+            - name: keygen
+              mountPath: /var/fluxd/keygen
+      volumes:
+        - name: keygen
+          emptyDir: {}
