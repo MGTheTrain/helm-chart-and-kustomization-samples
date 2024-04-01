@@ -29,7 +29,7 @@ Helm Chart samples required in combination with the [gitops-ftw Github repositor
 ### Showcase GitOps
 
 0. Create a `feature/xyz` branch
-1. Modify the Docker image tag to reference alternative service release versions in the [values.yml](./helm/sample-service/values.yaml) file, e.g. 
+1. Modify the Docker image tag to reference different service release versions in the [values.yml](./helm/sample-service/values.yaml) file, e.g. 
 
 ```sh
 # tag: "0.1.0" # Ensure docker image with tag 0.1.0 exists in the ACR 
