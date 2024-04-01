@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/MGTheTrain/helm-chart-samples-ftw.git
+    path: ./helm/nginx
+    targetRevision: main
+    directory:
+      recurse: true
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: gitops-ftw
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
