@@ -1,3 +1,0 @@
-[submodule "sample-service"]
-	path = sample-service
-	url = https://github.com/MGTheTrain/github-actions-for-csharp-asp-net-core-services.git
