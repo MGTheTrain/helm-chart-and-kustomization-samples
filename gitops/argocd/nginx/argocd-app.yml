@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: nginx-app
-  namespace: default
+  namespace: gitops-ftw
 spec:
   project: default
   source:
