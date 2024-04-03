@@ -21,7 +21,7 @@ spec:
             - --ssh-keygen-dir=/var/fluxd/keygen
           env:
             - name: GIT_URL
-              value: "git@github.com:MGTheTrain/helm-chart-samples-ftw.git"
+              value: "https://github.com/MGTheTrain/helm-chart-samples-ftw.git"
             - name: GIT_PATH
               value: "gitops/helm/nginx"
             - name: GIT_POLL_INTERVAL
