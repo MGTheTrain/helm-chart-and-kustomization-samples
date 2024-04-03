@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/MGTheTrain/helm-chart-samples-ftw.git
     path: ./gitops/helm/sample-service/
-    targetRevision: main
+    targetRevision: HEAD
     directory:
       recurse: true
   destination:
