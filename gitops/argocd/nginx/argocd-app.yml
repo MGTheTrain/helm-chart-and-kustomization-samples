@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/MGTheTrain/helm-chart-samples-ftw.git
-    path: ./gitops/helm/nginx
+    repoURL: git@github.com:MGTheTrain/helm-chart-samples-ftw.git
+    path: ./gitops/helm/nginx/
     targetRevision: main
     directory:
       recurse: true

@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flux
-  namespace: flux-system
+  namespace: gitops-ftw
 spec:
   replicas: 1
   selector:
@@ -21,7 +21,7 @@ spec:
             - --ssh-keygen-dir=/var/fluxd/keygen
           env:
             - name: GIT_URL
-              value: "https://github.com/MGTheTrain/helm-chart-samples-ftw.git"
+              value: "git@github.com:MGTheTrain/helm-chart-samples-ftw.git"
             - name: GIT_PATH
               value: "gitops/helm/nginx"
             - name: GIT_POLL_INTERVAL

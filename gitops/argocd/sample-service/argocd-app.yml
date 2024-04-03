@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/MGTheTrain/helm-chart-samples-ftw.git
-    path: ./gitops/helm/sample-service
+    repoURL: git@github.com:MGTheTrain/helm-chart-samples-ftw.git
+    path: ./gitops/helm/sample-service/
     targetRevision: main
     directory:
       recurse: true
