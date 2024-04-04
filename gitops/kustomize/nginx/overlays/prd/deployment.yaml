@@ -3,4 +3,4 @@ kind: Deployment
 metadata:
   name: nginx-deployment
 spec:
-  replicas: 1 # Change the replica count to 1
+  replicas: 3 # Change the replica count to 3
