@@ -20,6 +20,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: nginx
-  path: "./gitops/helm/nginx"
+  path: "./gitops/kustomize/nginx"
   prune: true
   timeout: 1m

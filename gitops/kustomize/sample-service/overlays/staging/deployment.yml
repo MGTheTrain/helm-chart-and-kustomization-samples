@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-service-deployment
+  labels:
+    app: sample-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sample-service
+  template:
+    metadata:
+      labels:
+        app: sample-service
+    spec:
+      serviceAccountName: ""
+      automountServiceAccountToken: true
+      securityContext: {}
+      containers:
+        - name: sample-service
+          securityContext: {}
+          image: "gftfbesbxacr001.azurecr.io/sample-service:0.1.0"
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          envFrom:
+            - secretRef:
+                name: "service-secret"

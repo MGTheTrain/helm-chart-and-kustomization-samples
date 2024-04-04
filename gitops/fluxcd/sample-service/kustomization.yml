@@ -20,6 +20,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: sample-service
-  path: "./gitops/helm/sample-service"
+  path: "./gitops/kustomize/sample-service"
   prune: true
   timeout: 1m
