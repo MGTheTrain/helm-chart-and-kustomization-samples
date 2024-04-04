@@ -7,7 +7,7 @@ spec:
   interval: 5m
   url: https://github.com/MGTheTrain/helm-chart-samples-ftw.git
   ref:
-    branch: master
+    branch: main
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
