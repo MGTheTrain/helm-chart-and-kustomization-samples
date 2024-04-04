@@ -20,6 +20,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: nginx
-  path: "./gitops/kustomize/nginx/overlays/dev"
+  path: "./gitops/kustomize/nginx/overlays/prd"
   prune: true
   timeout: 1m
