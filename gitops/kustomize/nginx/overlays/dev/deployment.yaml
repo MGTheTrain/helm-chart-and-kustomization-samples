@@ -2,27 +2,5 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
-  labels:
-    app: nginx
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      serviceAccountName: ""
-      automountServiceAccountToken: true
-      securityContext: {}
-      containers:
-        - name: nginx
-          securityContext: {}
-          image: "nginx"
-          imagePullPolicy: "IfNotPresent"
-          ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
+  replicas: 1 # Change the replica count to 1
