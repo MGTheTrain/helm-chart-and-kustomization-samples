@@ -1,0 +1,25 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: nginx
+  namespace: gitops-ftw
+spec:
+  interval: 5m
+  url: https://github.com/MGTheTrain/helm-chart-samples-ftw.git
+  ref:
+    branch: main
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: nginx
+  namespace: gitops-ftw
+spec:
+  interval: 10m
+  targetNamespace: gitops-ftw
+  sourceRef:
+    kind: GitRepository
+    name: nginx
+  path: "./gitops/kustomize/nginx/overlays/staging"
+  prune: true
+  timeout: 1m
