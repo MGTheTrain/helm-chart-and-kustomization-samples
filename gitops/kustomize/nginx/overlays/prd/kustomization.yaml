@@ -3,4 +3,7 @@ kind: Kustomization
 bases:
   - ../../base
 patches:
-  - deployment.yml
+  - path: deployment.yaml
+    target:
+      kind: Deployment
+      name: nginx-deployment
