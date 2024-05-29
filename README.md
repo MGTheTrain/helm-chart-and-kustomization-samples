@@ -1,4 +1,4 @@
-# helm-chart-samples-ftw
+# helm-chart-samples
 
 ## Table of Contents
 
